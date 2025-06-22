@@ -12,4 +12,4 @@ Pseudo-classes
 Relative units
 Media queries
 JavaScript
-Live site: 
+Live site: https://cnote86.github.io/web_project_around/
