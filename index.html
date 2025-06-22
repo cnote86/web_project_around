@@ -1,112 +1,114 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Mario Campos">
+  <meta name="keywords" content="Around">
+  <link rel="stylesheet" href="./pages/index.css">
+  <title>Around the USA</title>
+</head>
+<body>
+  <div class="page">
 
-<html lang="en"><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Mario Campos">
-    <meta name="keywords" content="Around">
-
-    <link rel="stylesheet" href="./pages/index.css">
-
-    <title>Around the USA</title>
-  </head>
-  <body>
-    <div class="page">
-
-      <div class="popup popup_form-edit-profile">
-        <div class="popup__container">
-          <dialog class="dialog">
-            <h2 class="popup__title">Edit Profile</h2>
-            <form class="popup__form">
-              <input type="text" class="input input_popup-name popup__input" id="input_popup-name" placeholder="Name" name="name" required="" minlength="2" maxlength="40">
-              <p class="form__error"></p>
-              <input type="text" class="input input_popup-job popup__input" id="input_popup-job" placeholder="About me" name="job" required="" minlength="2" maxlength="200">
-              <p class="form__error"></p>
-              <button type="submit" class="button button_popup-submit" disabled="">
-                Save
-              </button>
-            </form>
-            <button class="button button_close" id="close"> </button>
-          </dialog>
-        </div>
-      </div>
-
-      <div class="popup popup_form-edit-gallery">
-        <div class="popup__container">
-          <dialog class="dialog_gallery">
-            <h2 class="popup__title">New Place</h2>
-            <form class="popup__form-gallery">
-              <input required="" minlength="2" maxlength="30" type="text" class="input input_popup-title popup__input" id="input_popup-title" placeholder="Title" name="title">
-              <p class="form__error"></p>
-              <input required="" type="url" class="input input_popup-link popup__input" id="input_popup-link" placeholder="Image URL" name="link">
-              <p class="form__error"></p>
-              <button type="submit" class="button button_popup-submit" disabled>
-                Create
-              </button>
-            </form>
-            <button class="button button_close" id="closeGallery"> </button>
-          </dialog>
-        </div>
-      </div>
-
-      <template id="card-template">
-        <div class="card">
-          <img src="" class="card__img" alt="cover">
-          <div class="card__label">
-            <p class="block"></p>
-            <div class="button button_like">
-              <img src="./images/trash-icon.svg" class="trash" alt="delete" title="close">
-              <img src="./images/heart.svg" class="like" alt="like">
-            </div>
-          </div>
-        </div>
-      </template>
-
-      <!-- Open photo from gallery-->
-
-      <div class="popup popup_photo-gallery">
-        <div class="popup__container">
-          <dialog class="popup__gallery">
-            <div class="img-detail">
-              <img id="popupImage" src="./images/Yosemite.jpg" class="img_preview" alt="enlarged image">
-              <div id="popupText">Yosemite Valley</div>
-            </div>
-            <div class="popup__container">
-                <button class="button button_close" id="closeGallery2"> </button>
-            </div>
-          </dialog>
-        </div>
-      </div>
-
-
-      <header class="header">
-        <img src="./images/around_logo.svg" alt="Around" class="header__logo">
-      </header>
-
-      <main class="content">
-
-        <section class="profile">
-          <div class="profile__left">
-            <img src="./images/profilepic.jpg" alt="profile picture" class="profile__picture">  
-            <div>
-              <h1 class="profile__name">
-                <span id="profile__name">Jacques Cousteau</span>
-                <button type="button" class="profile__button" id="profile__button">
-                  <img src="./images/Profilebutton.png" alt="profilebutton icon">
-                </button>
-              </h1>
-              <h2 id="profile__description" class="profile__description">Explorer</h2>
-            </div>
-          </div>
-
-          <div class="gallery">
-            <button type="button" class="profile__add" id="profile__card">
-              <img src="./images/+.png" alt="+ icon">
+    <!-- Edit Profile Popup -->
+    <div class="popup popup_form-edit-profile">
+      <div class="popup__container">
+        <dialog class="dialog">
+          <h2 class="popup__title">Edit Profile</h2>
+          <form class="popup__form form">
+            <input type="text" class="input input_popup-name popup__input" id="input_popup-name" placeholder="Name" name="name" required minlength="2" maxlength="40">
+            <p class="form__error"></p>
+            <input type="text" class="input input_popup-job popup__input" id="input_popup-job" placeholder="About me" name="job" required minlength="2" maxlength="200">
+            <p class="form__error"></p>
+            <button type="submit" class="button button_popup-submit" disabled>
+              Save
             </button>
-          </div>
-        </section>
+          </form>
+          <button class="button button_close" id="close"> </button>
+        </dialog>
+      </div>
+    </div>
 
-        <section class="elements" id="elements">
+    <!-- Add Gallery Popup -->
+    <div class="popup popup_form-edit-gallery">
+      <div class="popup__container">
+        <dialog class="dialog dialog_gallery">
+          <h2 class="popup__title">New Place</h2>
+          <form class="popup__form-gallery form">
+            <input required minlength="2" maxlength="30" type="text" class="input input_popup-title popup__input" id="input_popup-title" placeholder="Title" name="title">
+            <p class="form__error"></p>
+            <input required type="url" class="input input_popup-link popup__input" id="input_popup-link" placeholder="Image URL" name="link">
+            <p class="form__error"></p>
+            <button type="submit" class="button button_popup-submit" disabled>
+              Create
+            </button>
+          </form>
+          <button class="button button_close" id="closeGallery"> </button>
+        </dialog>
+      </div>
+    </div>
+
+    <!-- Card Template -->
+    <template id="card-template">
+      <div class="card">
+        <img src="" class="card__img" alt="cover">
+        <div class="card__label">
+          <p class="block"></p>
+          <div class="button button_like">
+            <img src="./images/trash-icon.svg" class="trash" alt="delete" title="close">
+            <img src="./images/heart.svg" class="like" alt="like">
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <!-- View Photo Popup -->
+    <div class="popup popup_photo-gallery">
+      <div class="popup__container">
+        <dialog class="popup__gallery">
+          <div class="img-detail">
+            <img id="popupImage" src="./images/Yosemite.jpg" class="img img_preview" alt="enlarged image">
+            <div id="popupText">Yosemite Valley</div>
+          </div>
+          <div class="popup__container">
+            <button class="button button_close" id="closeGallery2"> </button>
+          </div>
+        </dialog>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+      <img src="./images/around_logo.svg" alt="Around" class="header__logo">
+    </header>
+
+    <!-- Main Content -->
+    <main class="content">
+
+      <section class="profile">
+        <div class="profile__left">
+          <img src="./images/profilepic.jpg" alt="profile picture" class="profile__picture">  
+          <div>
+            <h1 class="profile__name">
+              <span id="profile__name">Jacques Cousteau</span>
+              <button type="button" class="profile__button" id="profile__button">
+                <img src="./images/Profilebutton.png" alt="profilebutton icon">
+              </button>
+            </h1>
+            <h2 id="profile__description" class="profile__description">Explorer</h2>
+          </div>
+        </div>
+
+        <div class="gallery">
+          <button type="button" class="profile__add" id="profile__card">
+            <img src="./images/+.png" alt="+ icon">
+          </button>
+        </div>
+      </section>
+
+      <section class="elements" id="elements">
+        <!-- Cards (Repeatable) -->
         <div class="card">
           <img src="https://unsplash.com/es/fotos/montanas-durante-la-hora-dorada-vaPoJZB9Mzg" class="card__img" alt="Yosemite Valley">
           <div class="card__label">
@@ -117,7 +119,7 @@
             </div>
           </div>
         </div>
-      
+
         <div class="card">
           <img src="https://unsplash.com/es/fotos/muro-de-hormigon-marron-y-negro-Cg9Y39NW5NQ" class="card__img" alt="Zion National Park">
           <div class="card__label">
@@ -128,7 +130,7 @@
             </div>
           </div>
         </div>
-      
+
         <div class="card">
           <img src="https://unsplash.com/es/fotos/personas-en-la-orilla-de-la-playa-durante-el-dia-_3MkVwpRXcI" class="card__img" alt="Yellowstone">
           <div class="card__label">
@@ -139,7 +141,7 @@
             </div>
           </div>
         </div>
-      
+
         <div class="card">
           <img src="https://unsplash.com/es/fotos/canon-marron-ntTWkCHiylI" class="card__img" alt="Bryce Canyon">
           <div class="card__label">
@@ -150,7 +152,7 @@
             </div>
           </div>
         </div>
-      
+
         <div class="card">
           <img src="https://unsplash.com/es/fotos/formacion-rocosa-marron-bajo-el-cielo-azul-durante-el-dia-EPyKdwWz67k" class="card__img" alt="Arches">
           <div class="card__label">
@@ -161,7 +163,7 @@
             </div>
           </div>
         </div>
-      
+
         <div class="card">
           <img src="https://unsplash.com/es/fotos/un-acantilado-con-gente-en-el-dPb1QjP1g74" class="card__img" alt="Grand Cayon">
           <div class="card__label">
@@ -173,23 +175,20 @@
           </div>
         </div>
       </section>
+    </main>
 
-      </main>
+    <footer class="footer">
+      <p>© 2025 Mario Campos</p>
+    </footer>
 
-      <footer class="footer">
-        <p> © 2025 Mario ©ampos </p>
-      </footer>
-
-      <script type="module" src="./scripts/index.js"></script>
-      <script type="module" src="./components/Card.js"></script>
-      <script type="module" src="./components/Section.js"></script>
-      <script type="module" src="./components/Popup.js"></script>
-      <script type="module" src="./components/PopupWithForms.js"></script>
-      <script type="module" src="./components/PopupWithImage.js"></script>
-      <script type="module" src="./components/FormValidator.js"></script>
-
-
-    </div>
-  
-
-</body></html>
+    <!-- Scripts -->
+    <script type="module" src="./scripts/index.js"></script>
+    <script type="module" src="./components/Card.js"></script>
+    <script type="module" src="./components/Section.js"></script>
+    <script type="module" src="./components/Popup.js"></script>
+    <script type="module" src="./components/PopupWithForms.js"></script>
+    <script type="module" src="./components/PopupWithImage.js"></script>
+    <script type="module" src="./components/FormValidator.js"></script>
+  </div>
+</body>
+</html>
