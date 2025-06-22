@@ -92,7 +92,7 @@ const handleGalleryFormSubmit = (evt) => {
 const popupAddImg = new PopupWithForms(".dialog_gallery", handleGalleryFormSubmit);
 popupAddImg.setEventListeners("#profile__card");
 
-// validators
+// feature: form modal submit & validation logic
 const validForm1Cfg = {
   inputSelector: ".popup__input",
   submitButtonSelector: ".button_popup-submit",
