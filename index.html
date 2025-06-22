@@ -1,41 +1,193 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Around the US</title>
-  <link rel="stylesheet" href="../styles/index.css" />
-</head>
-<body class="page">
-  <div class="page__content">
-    <header class="header">
-      <h1 class="header__logo">Around the US</h1>
-    </header>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Mario Campos">
+    <meta name="keywords" content="Around">
 
-    <main class="main">
-      <section class="profile">
-        <div class="profile__info">
-          <h1 class="profile__name">Jacques Cousteau</h1>
-          <p class="profile__job">Explorer</p>
-          <button class="profile__edit-button">Edit Profile</button>
+    <link rel="stylesheet" href="./page/index.css">
+
+    <title>Around the USA</title>
+  </head>
+  <body>
+    <div class="page">
+
+      <div class="popup popup_form-edit-profile">
+        <div class="popup__container">
+          <dialog class="dialog">
+            <h2 class="popup__title">Edit Profile</h2>
+            <form class="popup__form">
+              <input type="text" class="input input_popup-name popup__input" id="input_popup-name" placeholder="Name" name="name" required="" minlength="2" maxlength="40">
+              <p class="form__error"></p>
+              <input type="text" class="input input_popup-job popup__input" id="input_popup-job" placeholder="About me" name="job" required="" minlength="2" maxlength="200">
+              <p class="form__error"></p>
+              <button type="submit" class="button button_popup-submit" disabled="">
+                Save
+              </button>
+            </form>
+            <button class="button button_close" id="close"> </button>
+          </dialog>
+        </div>
+      </div>
+
+      <div class="popup popup_form-edit-gallery">
+        <div class="popup__container">
+          <dialog class="dialog_gallery">
+            <h2 class="popup__title">New Place</h2>
+            <form class="popup__form-gallery">
+              <input required="" minlength="2" maxlength="30" type="text" class="input input_popup-title popup__input" id="input_popup-title" placeholder="Title" name="title">
+              <p class="form__error"></p>
+              <input required="" type="url" class="input input_popup-link popup__input" id="input_popup-link" placeholder="Image URL" name="link">
+              <p class="form__error"></p>
+              <button type="submit" class="button button_popup-submit" disabled="close">
+                Create
+              </button>
+            </form>
+            <button class="button button_close" id="closeGallery"> </button>
+          </dialog>
+        </div>
+      </div>
+
+      <template id="card-template">
+        <div class="card">
+          <img src="" class="card__img" alt="cover">
+          <div class="card__label">
+            <p class="block"></p>
+            <div class="button button_like">
+              <img src="./images/trash-icon.svg" class="trash" alt="delete" title="close">
+              <img src="./images/heart.svg" class="like" alt="like">
+            </div>
+          </div>
+        </div>
+      </template>
+
+      <!-- Open photo from gallery-->
+
+      <div class="popup popup_photo-gallery">
+        <div class="popup__container">
+          <dialog class="popup__gallery">
+            <div class="img-detail">
+              <img id="popupImage" src="./images/Yosemite.jpg" class="img_preview" alt="enlarged image">
+              <div id="popupText">Yosemite Valley</div>
+            </div>
+            <div class="popup__container">
+                <button class="button button_close" id="closeGallery2"> </button>
+            </div>
+          </dialog>
+        </div>
+      </div>
+
+
+      <header class="header">
+        <img src="./images/around_logo.svg" alt="Around" class="header__logo">
+      </header>
+
+      <main class="content">
+
+        <section class="profile">
+          <div class="profile__left">
+            <img src="./images/profilepic.jpg" alt="profile picture" class="profile__picture">  
+            <div>
+              <h1 class="profile__name">
+                <span id="profile__name">Jacques Cousteau</span>
+                <button type="button" class="profile__button" id="profile__button">
+                  <img src="./images/Profilebutton.png" alt="profilebutton icon">
+                </button>
+              </h1>
+              <h2 id="profile__description" class="profile__description">Explorer</h2>
+            </div>
+          </div>
+
+          <div class="gallery">
+            <button type="button" class="profile__add" id="profile__card">
+              <img src="./images/+.png" alt="+ icon">
+            </button>
+          </div>
+        </section>
+
+        <section class="elements" id="elements">
+        <div class="card">
+          <img src="https://unsplash.com/es/fotos/montanas-durante-la-hora-dorada-vaPoJZB9Mzg" class="card__img" alt="Yosemite Valley">
+          <div class="card__label">
+            <p class="block">Yosemite Valley</p>
+            <div class="button button_like">
+              <img src="./images/trash-icon.svg" class="trash" alt="delete" title="close">
+              <img src="./images/heart.svg" class="like" alt="like">
+            </div>
+          </div>
+        </div>
+      
+        <div class="card">
+          <img src="https://unsplash.com/es/fotos/muro-de-hormigon-marron-y-negro-Cg9Y39NW5NQ" class="card__img" alt="Zion National Park">
+          <div class="card__label">
+            <p class="block">Zion National Park</p>
+            <div class="button button_like">
+              <img src="./images/trash-icon.svg" class="trash" alt="delete" title="close">
+              <img src="./images/heart.svg" class="like" alt="like">
+            </div>
+          </div>
+        </div>
+      
+        <div class="card">
+          <img src="https://unsplash.com/es/fotos/personas-en-la-orilla-de-la-playa-durante-el-dia-_3MkVwpRXcI" class="card__img" alt="Yellowstone">
+          <div class="card__label">
+            <p class="block">Yellowstone</p>
+            <div class="button button_like">
+              <img src="./images/trash-icon.svg" class="trash" alt="delete" title="close">
+              <img src="./images/heart.svg" class="like" alt="like">
+            </div>
+          </div>
+        </div>
+      
+        <div class="card">
+          <img src="https://unsplash.com/es/fotos/canon-marron-ntTWkCHiylI" class="card__img" alt="Bryce Canyon">
+          <div class="card__label">
+            <p class="block">Bryce Canyon</p>
+            <div class="button button_like">
+              <img src="./images/trash-icon.svg" class="trash" alt="delete" title="close">
+              <img src="./images/heart.svg" class="like" alt="like">
+            </div>
+          </div>
+        </div>
+      
+        <div class="card">
+          <img src="https://unsplash.com/es/fotos/formacion-rocosa-marron-bajo-el-cielo-azul-durante-el-dia-EPyKdwWz67k" class="card__img" alt="Arches">
+          <div class="card__label">
+            <p class="block">Arches</p>
+            <div class="button button_like">
+              <img src="./images/trash-icon.svg" class="trash" alt="delete" title="close">
+              <img src="./images/heart.svg" class="like" alt="like">
+            </div>
+          </div>
+        </div>
+      
+        <div class="card">
+          <img src="https://unsplash.com/es/fotos/un-acantilado-con-gente-en-el-dPb1QjP1g74" class="card__img" alt="Grand Cayon">
+          <div class="card__label">
+            <p class="block">Grand Cayon</p>
+            <div class="button button_like">
+              <img src="./images/trash-icon.svg" class="trash" alt="delete" title="close">
+              <img src="./images/heart.svg" class="like" alt="like">
+            </div>
+          </div>
         </div>
       </section>
 
-      <section class="cards">
-        <ul class="cards__list"></ul>
-      </section>
-    </main>
-  </div>
-  <div class="popup" id="edit-popup">
-  <div class="popup__container">
-    <button class="popup__close-button" type="button">✖</button>
-    <form class="popup__form">
-      <h3 class="popup__title">Edit Profile</h3>
-      <input type="text" class="popup__input" name="name" placeholder="Name" required />
-      <input type="text" class="popup__input" name="job" placeholder="About Me" required />
-      <button class="popup__save-button" type="submit">Save</button>
-    </form>
-  </div>
-</div>
-</body>
-</html>
+      </main>
+
+      <footer class="footer">
+        <p> © 2025 Mario ©ampos </p>
+      </footer>
+
+      <script type="module" src="./page/index.js"></script>
+      <script type="module" src="./components/Card.js"></script>
+      <script type="module" src="./components/Section.js"></script>
+      <script type="module" src="./components/Popup.js"></script>
+      <script type="module" src="./components/PopupWithForms.js"></script>
+      <script type="module" src="./components/PopupWithImage.js"></script>
+      <script type="module" src="./components/FormValidator.js"></script>
+
+
+    </div>
+  
+
+</body></html>
