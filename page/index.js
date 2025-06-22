@@ -14,7 +14,7 @@ import { UserInfo } from "../components/UserInfo.js";
   },
   {
     name: "Yellowstone",
-    link: "/images/Yellow Stone.jpg"
+    link: "./images/Yellow Stone.jpg"
   },
   {
     name: "Bryce Canyon",
