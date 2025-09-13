@@ -7,36 +7,37 @@ export class Card {
     this._image_url = image_url;
   }
 
-  render() {
-    const cardTemplate  = document.querySelector("#card-template").content;
+ render() {
+  const cardTemplate = document.querySelector("#card-template").content;
 
-    const cardElement = cardTemplate.cloneNode(true);
+  // ✅ Only clone the .card inside the template
+  const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
 
-    const imageElement = cardElement.querySelector(".card__img");
-    imageElement.src = this._image_url;
-    imageElement.alt = this._name;
+  const imageElement = cardElement.querySelector(".card__img");
+  imageElement.src = this._image_url;
+  imageElement.alt = this._name;
 
-    const nameElement = cardElement.querySelector(".block");
-    nameElement.innerHTML = this._name;
+  const nameElement = cardElement.querySelector(".block");
+  nameElement.textContent = this._name;
 
-    const trashButton = cardElement.querySelector(".trash");
-    const me = this;
-    trashButton.addEventListener("click", function() {
-      me.onDeleteCard(trashButton);
-    });
+  const trashButton = cardElement.querySelector(".trash");
+  const me = this;
+  trashButton.addEventListener("click", function() {
+    me.onDeleteCard(trashButton);
+  });
 
-    const imageFull = cardElement.querySelector(".card__img");
-    imageFull.addEventListener("click", function() {
-      me.showImage();
-    });
+  const imageFull = cardElement.querySelector(".card__img");
+  imageFull.addEventListener("click", function() {
+    me.showImage();
+  });
 
-    const likeButton = cardElement.querySelector(".like");
-    likeButton.addEventListener("click", function() {
-      me.onLikeCard(this);
-    });
+  const likeButton = cardElement.querySelector(".like");
+  likeButton.addEventListener("click", function() {
+    me.onLikeCard(this);
+  });
 
-    return cardElement;
-  }
+  return cardElement;
+}
 
   onDeleteCard(trash) {
     const cardToRemove = trash.closest('.card');
