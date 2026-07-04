@@ -34,8 +34,8 @@
   background: url("../images/trash-icon.svg") center no-repeat;
   height: 19px;
   position: absolute;
-  right: 0;
-  top: -275px;
+  right: 15px;
+  top: -25px;
   width: 18px;
 }
 
@@ -69,10 +69,7 @@ p.block {
 @media (max-width: 950px) {
   .elements {
     grid-template-columns: auto auto;
-    padding-left: 110px;
-    padding-left: 160px;
     gap: 16px;
-    padding-right: 130px;
     max-width: 880px;
     width: fit-content;
     margin: 0 auto;
