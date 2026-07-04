@@ -1,28 +1,33 @@
-TripleTen – Around the U.S. Project
-Around the U.S. is a responsive web project that allows users to add, remove, and like photos. The layout is fully adaptable to various screen sizes, using relative units and media queries to ensure the design stays consistent across different breakpoints without breaking. JavaScript is used to bring interactive functionality to the page elements.
+# TripleTen – Around the U.S. Project
 
-Technologies used:
-Semantic HTML5
-BEM methodology
-Flexbox
-CSS Grid
-Text overflow handling
-Hover effects
-Pseudo-classes
-Relative units
-Media queries
-JavaScript
-Live site: https://cnote86.github.io/web_project_around/
+Around the U.S. is a responsive web application that allows users to browse, add, remove, and like photos of national parks. The project features a fully adaptive layout built with relative units and media queries, ensuring a consistent experience across all screen sizes.
 
-Programación Orientada a Objetos y Módulos ES6:
-El proyecto fue refactorizado utilizando principios de programación orientada a objetos (POO) y sintaxis de módulos ES6 (export/import). El código está organizado en clases reutilizables:
+The application was refactored using **object-oriented programming (OOP)** principles and **ES6 module syntax** (export/import). The codebase is organized into reusable, modular classes that keep the code clean and maintainable.
 
-• Card – maneja el renderizado de cada tarjeta de imagen, incluyendo la funcionalidad de dar like y eliminar
-• FormValidator – gestiona la lógica de validación de formularios
-• Popup – clase base para todos los popups/modales
-• PopupWithForms – extiende Popup para formularios (editar perfil, agregar nueva tarjeta)
-• PopupWithImage – extiende Popup para la vista previa de imágenes
-• Section – maneja el renderizado de los elementos de tarjeta en la página
-• UserInfo – gestiona la visualización y actualización de los datos del perfil del usuario
+## Technologies Used
 
-Estos módulos son importados y coordinados en index.js, manteniendo el código limpio, modular y fácil de mantener.
+- Semantic HTML5
+- BEM methodology
+- Flexbox & CSS Grid
+- Responsive design with media queries and relative units
+- JavaScript (ES6+)
+- Object-Oriented Programming (OOP)
+- ES6 Modules (export/import)
+
+## Project Architecture
+
+The JavaScript code is structured around the following classes:
+
+- **Card** – Renders each image card and handles like/delete functionality
+- **FormValidator** – Manages real-time form validation logic
+- **Popup** – Base class for all modal popups
+- **PopupWithForms** – Extends Popup to handle form submissions (edit profile, add new card)
+- **PopupWithImage** – Extends Popup for full-size image preview
+- **Section** – Handles rendering and prepending card elements to the page
+- **UserInfo** – Manages user profile data display and updates
+
+All modules are imported and coordinated in `index.js`, following a clean separation of concerns.
+
+## Live Site
+
+https://cnote86.github.io/web_project_around/
