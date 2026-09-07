@@ -29,6 +29,6 @@ export const validationConfig = {
   inputSelector: ".popup__input",
   submitButtonSelector: ".button_popup-submit",
   inactiveButtonClass: "popup__button_disabled",
-  inputErrorClass: "form__error",
+  inputErrorClass: "input_type_error",
   errorClass: "form__error_visible",
 };

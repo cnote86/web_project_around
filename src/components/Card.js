@@ -52,7 +52,7 @@ export class Card {
 
     this._imageElement.src = this._link;
     this._imageElement.alt = this._name;
-    this._cardElement.querySelector(".block").textContent = this._name;
+    this._cardElement.querySelector(".card__title").textContent = this._name;
 
     this._setEventListeners();
 

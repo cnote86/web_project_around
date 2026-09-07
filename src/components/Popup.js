@@ -29,11 +29,11 @@ export class Popup {
     }
   }
 
-  setEventListeners(openSelector = "") {
+  setEventListeners() {
     const buttonClose = this._modal.querySelector(".button_close");
-    buttonClose.onclick = () => {
+    buttonClose.addEventListener("click", () => {
       this.close();
-    };
+    });
 
     this._modal.addEventListener("click", (evt) => {
       const dialogRect = this._modal.getBoundingClientRect();
@@ -43,7 +43,7 @@ export class Popup {
         evt.clientY < dialogRect.top ||
         evt.clientY > dialogRect.bottom;
 
-      if (isOutsideDialog) {
+      if (evt.target === this._modal && isOutsideDialog) {
         this.close();
       }
     });
@@ -52,12 +52,5 @@ export class Popup {
       evt.preventDefault();
       this.close();
     });
-
-    if (openSelector) {
-      const buttonOpen = document.querySelector(openSelector);
-      buttonOpen.onclick = () => {
-        this.open();
-      };
-    }
   }
 }

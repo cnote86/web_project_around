@@ -12,12 +12,16 @@ export class FormValidator {
 
   _showInputError(inputElement) {
     const errorElement = inputElement.nextElementSibling;
+    inputElement.classList.add(this._config.inputErrorClass);
+    inputElement.setAttribute("aria-invalid", "true");
     errorElement.textContent = inputElement.validationMessage;
     errorElement.classList.add(this._config.errorClass);
   }
 
   _hideInputError(inputElement) {
     const errorElement = inputElement.nextElementSibling;
+    inputElement.classList.remove(this._config.inputErrorClass);
+    inputElement.removeAttribute("aria-invalid");
     errorElement.textContent = "";
     errorElement.classList.remove(this._config.errorClass);
   }
@@ -51,7 +55,7 @@ export class FormValidator {
     this.toggleButtonState();
   }
 
-  setEventListeners() {
+  setEventListener() {
     this.toggleButtonState();
 
     this._inputList.forEach((inputElement) => {

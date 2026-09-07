@@ -7,23 +7,15 @@
   margin: 0 auto;
 }
 
-body{
+body {
   background-color: #000;
 }
-
-.block {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
 
 @media screen and (max-width: 650px) {
   .page {
     padding: 0;
   }
 }
-
 
 @media screen and (max-width: 400px) {
   .page {

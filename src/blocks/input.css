@@ -15,32 +15,24 @@
   color: rgba(0, 0, 0, 0.2);
 }
 
-
-.form__error {
-  display: none;
-  color: red;
-  position: relative;
-  top: -29px;
-  font-size: 12px;
-  margin: 0;
-}
-
-.form__error_visible {
-  display: block;
-  color: red;
-
-}
-
-
-
-
 @media screen and (max-width: 590px) {
   .input {
     padding: 9px;
     height: 26px;
   }
+}
 
+@media screen and (max-width: 590px) {
   .input:first-of-type {
     margin-bottom: 30px;
   }
+}
+
+.input:hover,
+.input:focus-visible {
+  border-bottom-color: #000;
+}
+
+.input_type_error {
+  border-bottom-color: red;
 }

@@ -1,0 +1,13 @@
+.form__error {
+  display: none;
+  color: red;
+  position: relative;
+  top: -29px;
+  font-size: 12px;
+  margin: 0;
+}
+
+.form__error_visible {
+  display: block;
+  color: red;
+}
